@@ -22,7 +22,7 @@ int g_precision(const char *frmt, int *i, va_list list)
 		if (check_digit(formt[cue]))
 		{
 			pre *= 10;
-			pre+= frmt[cuei] - '0';
+			pre+= frmt[cue] - '0';
 		}
 		else if (frmt[cue] == '*')
 		{

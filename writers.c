@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * handle_write_char - Prints a string
+ * _write_char - Prints a string
  * @c: char types.
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags.
@@ -10,7 +10,7 @@
  *
  * Return: Number of chars printed.
  */
-int 	_write_char(char c, char buf_array[],
+int _write_char(char c, char buf_array[],
 	int IDs, int width, int precision, int size)
 {
 	int i = 0;
@@ -87,7 +87,7 @@ int _write_int(int is_pos, int indx, char buffer[],
  * @xtra: extras
  * Return: result
  */
-int write_num(int ind, char buffer[],
+int write_enum(int ind, char buffer[],
 	int flags, int width, int precision,
 	int len, char padding, char xtra)
 {
@@ -142,7 +142,7 @@ int write_num(int ind, char buffer[],
  * @size: size
  * Return: result
  */
-int write_unsgnd(int is_neg, int indx,
+int write_uint(int is_neg, int indx,
 	char buf_array[],
 	int IDs, int width, int precision, int size)
 {
@@ -199,7 +199,7 @@ int write_unsgnd(int is_neg, int indx,
  * @paddings: start of pad
  * Return: result
  */
-int write_pointer(char buf_array[], int indx, int len,
+int _write_address(char buf_array[], int indx, int len,
 	int width, int IDs, char padding, char xtra, int paddings)
 {
 	int i;

@@ -46,7 +46,7 @@ va_list list, char buf_array[], int IDs, int width, int precision, int size);
 
 /*PRINT FUNCTIONS*/
 /*chars and strings*/
-int printf_char(va_list typs, char buf_array[],
+int printf_c(va_list typs, char buf_array[],
 	int IDs, int width, int precision, int size);
 int printf_str(va_list typs, char buf_array[],
 	int IDs, int width, int precision, int size);
@@ -91,9 +91,9 @@ int _write_char(char c, char buf_array[],
 int _write_int(int is_pos, int indx, char buf_array[],
 	int IDs, int width, int precision, int size);
 int _write_enum(int indx, char bffer[], int IDs, int width, int precision,
-	int length, char paddings, char xtra_c);
+	int length, char paddings, char xtra);
 int _write_address(char buf_array[], int indx, int length,
-	int width, int IDs, char paddings, char xtra_c, int paddings_start);
+	int width, int IDs, char paddings, char xtra, int paddings_start);
 
 int _write_uint(int is_neg, int indx, char buf_array[],
 	int IDs, int width, int precision, int size);

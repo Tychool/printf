@@ -122,7 +122,7 @@ int printf_rev(va_list typs, char buf_array[],
 	{
 		char xtra = s[i];
 
-		write(1, &ztra, 1);
+		write(1, &xtra, 1);
 		indx++;
 	}
 	return (indx);

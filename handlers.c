@@ -16,7 +16,7 @@ int handle_print(const char *fmt, int *indx, va_list list, char buf_array[],
 {
 	int i, x_len = 0, p_chars = -1;
 	fmt_t fmt_typs[] = {
-		{'c', printf_char}, {'s', printf_str}, {'%', printf_percentage},
+		{'c', printf_c}, {'s', printf_str}, {'%', printf_percentage},
 		{'i', printf_int}, {'d', printf_int}, {'b', printf_bin},
 		{'u', printf_unsign}, {'o', printf_oct}, {'x', printf_hex},
 		{'X', printf_HEX}, {'p', printf_address}, {'S', printf_np},

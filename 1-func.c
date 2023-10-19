@@ -84,7 +84,7 @@ int printf_oct(va_list typs, char buf_array[],
  * @size: size
  * Return: result
  */
-int printf_hex_help(va_list typs, char buf_array[],
+int printf_hex(va_list typs, char buf_array[],
 	int IDs, int width, int precision, int size)
 {
 	return (printf_hexa_help(typs, "0123456789abcdef", buf_array,
@@ -130,7 +130,7 @@ int print_hexa_help(va_list typs, char mapping[], char buf_array[],
 
 	UNUSED(width);
 
-	num = size_converter_uint(numIN, size);
+	numIN = size_converter_uint(numIN, size);
 
 	if (numIN == 0)
 		buf_array[i--] = '0';

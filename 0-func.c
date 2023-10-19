@@ -13,7 +13,7 @@
 int printf_c(va_list typs, char buf_array[],
 	int IDs, int width, int precision, int size)
 {
-	char c = va_arg(types, int);
+	char c = va_arg(typs, int);
 
 	return (handle_write_char(c, buf_array, IDs, width, precision, size));
 }
@@ -31,7 +31,7 @@ int printf_str(va_list typs, char buf_array[],
 	int IDs, int width, int precision, int size)
 {
 	int len = 0, i;
-	char *str = va_arg(types, char *);
+	char *str = va_arg(typs, char *);
 
 	UNUSED(buf_array);
 	UNUSED(IDs);
@@ -45,7 +45,7 @@ int printf_str(va_list typs, char buf_array[],
 			str = "      ";
 	}
 
-	while (str[length] != '\0')
+	while (str[len] != '\0')
 		len++;
 
 	if (precision >= 0 && precision < len)
@@ -108,7 +108,7 @@ int printf_int(va_list typs, char buf_array[],
 {
 	int i = BUFF_SIZE - 2;
 	int is_neg = 0;
-	long int no = va_arg(types, long int);
+	long int no = va_arg(typs, long int);
 	unsigned long int number;
 
 	no = size_converter(no, size);
