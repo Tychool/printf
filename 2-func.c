@@ -13,7 +13,7 @@ int printf_address(va_list typs, char buf_array[], IDs, int width, int precision
 {
 	char xtra_c = 0, padding = ' ';
 	int indx = PRINT_BUFFER_SIZE - 2, len = 2, paddingS = 1;
-	unsigned long numIN
+	unsigned long numIN;
 	char mapping = "0123456789abcdef";
 	void *mem = va_arg(typs, void *);
 
@@ -26,7 +26,7 @@ int printf_address(va_list typs, char buf_array[], IDs, int width, int precision
 	buf_array[PRINT_BUFFER_SIZE - 1] = '\0';
 	UNUSED(precision);
 
-	numIN= (unsigned long)mem;
+	numIN = (unsigned long)mem;
 
 	while (numIN > 0)
 	{
