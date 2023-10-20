@@ -15,7 +15,7 @@ int printf_c(va_list typs, char buf_array[],
 {
 	char c = va_arg(typs, int);
 
-	return (handle_write_char(c, buf_array, IDs, width, precision, size));
+	return (_write_char(c, buf_array, IDs, width, precision, size));
 }
 /**
  * printf_str - print stringa
@@ -106,17 +106,17 @@ int printf_percentage(va_list typs, char buf_array[],
 int printf_int(va_list typs, char buf_array[],
 	int flags, int width, int precision, int size)
 {
-	int i = BUFF_SIZE - 2;
+	int i = PRINT_BUFFER_SIZE - 2;
 	int is_neg = 0;
 	long int no = va_arg(typs, long int);
 	unsigned long int number;
 
-	no = size_converter(no, size);
+	no = size_converter_int(no, size);
 
 	if (no == 0)
 		buf_array[i--] = '0';
 
-	buf_array[BUFF_SIZE - 1] = '\0';
+	buf_array[PRINT_BUFFER_SIZE - 1] = '\0';
 	number = (unsigned long int)no;
 
 	if (no < 0)
@@ -133,7 +133,7 @@ int printf_int(va_list typs, char buf_array[],
 
 	i++;
 
-	return (write_number(is_neg, i, buf_array, IDs, width, precision, size));
+	return (_write_int(is_neg, i, buf_array, IDs, width, precision, size));
 }
 /**
  * printf_bin - print binary unsigned
